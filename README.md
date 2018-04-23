@@ -1,18 +1,20 @@
+![Twitch4J Logo](docs/static_files/logo.png?raw=true)
+
 # Java API for [Twitch](https://www.twitch.tv/) V5
 
 Project Information:
 
 [![Build Status](https://travis-ci.org/PhilippHeuer/twitch4j.svg?branch=master)](https://travis-ci.org/PhilippHeuer/twitch4j)
-[![Dependency Status](https://www.versioneye.com/user/projects/5874cd85fff5dc002990c796/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5874cd85fff5dc002990c796)
+[![Libraries.io for GitHub](https://img.shields.io/librariesio/github/twitch4j/twitch4j.svg?style=flat-square)]()
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d9f9562de194b7f8699f9adfd0c4669)](https://www.codacy.com/app/PhilippHeuer/twitch4j?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=PhilippHeuer/twitch4j&amp;utm_campaign=Badge_Grade)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/PhilippHeuer/twitch4j.svg)](http://isitmaintained.com/project/PhilippHeuer/twitch4j "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/PhilippHeuer/twitch4j.svg)](http://isitmaintained.com/project/PhilippHeuer/twitch4j "Percentage of issues still open")
-[![](https://jitpack.io/v/PhilippHeuer/twitch4j.svg)](https://jitpack.io/#PhilippHeuer/twitch4j)
+[![Download](https://api.bintray.com/packages/twitch4j/maven/Twitch4J/images/download.svg) ](https://bintray.com/twitch4j/maven/Twitch4J/_latestVersion)
 
 Support:
 
-[![Discord](https://img.shields.io/badge/Join-Twitch4J-7289DA.svg?style=flat-square)](https://discord.gg/FQ5vgW3)
-[<img src="https://discordapp.com/api/guilds/143001431388061696/widget.png?style=shield">](https://discord.gg/FQ5vgW3)
+[![Discord Server](https://discordapp.com/api/guilds/143001431388061696/embed.png?style=banner2)](https://discord.gg/FQ5vgW3)
+[![Twitch API Server](https://discordapp.com/api/guilds/325552783787032576/embed.png?style=banner2)](https://discord.gg/8NXaEyV)
 
 Documentation:
 
@@ -31,18 +33,16 @@ This project is still in development, check out [Features](#features) and [Chang
 
 #### Gradle
 Add it to your build.gradle with:
-```gradle
-allprojects {
-    repositories {
-        maven { url "https://jitpack.io" }
-    }
+```groovy
+repositories {
+	jcenter()
 }
 ```
-and:
+and: (latest, you should use the actual version here)
 
-```gradle
+```groovy
 dependencies {
-    compile 'com.github.PhilippHeuer:twitch4j:master-SNAPSHOT'
+    compile 'com.github.twitch4j:twitch4j:+'
 }
 ```
 
@@ -51,18 +51,18 @@ Add it to your pom.xml with:
 ```xml
 <repositories>
     <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
+      <id>jcenter</id>
+      <url>https://jcenter.bintray.com/</url>
     </repository>
 </repositories>
 ```
-and:
+and: (latest, you should use the actual version here)
 
 ```xml
 <dependency>
-    <groupId>com.github.PhilippHeuer</groupId>
+    <groupId>com.github.twitch4j</groupId>
     <artifactId>twitch4j</artifactId>
-    <version>master-SNAPSHOT</version>
+    <version>v0.10.0</version>
 </dependency>
 ```
 
@@ -139,7 +139,7 @@ Just some simple examples, visit the [WIKI](https://github.com/PhilippHeuer/twit
 
 ### Client Builder (Twitch Standalone)
 ```java
-TwitchClient twitchClient = TwitchClientBuilder.builder()
+TwitchClient twitchClient = TwitchClientBuilder.init()
 	.withClientId("Twitch App Id")
 	.withClientSecret("Twitch App Secret")
 	.withAutoSaveConfiguration(true)

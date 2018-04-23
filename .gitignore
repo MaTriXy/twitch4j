@@ -38,6 +38,7 @@ local.properties
 #Gradle
 .gradletasknamecache
 .gradle/
+gradle.properties
 
 # Exceptions
 !gradle/wrapper/*.jar
@@ -51,3 +52,6 @@ client.log
 
 # Example Code
 /src/main/java/me/philippheuer/twitch4j/example/*
+
+# Modules
+/modules/
