@@ -35,23 +35,21 @@ local.properties
 *.iws
 .idea/
 
-#Gradle
+# Gradle
 .gradletasknamecache
 .gradle/
-gradle.properties
-
-# Exceptions
 !gradle/wrapper/*.jar
-
-# Logs / Save Files
-config/*
-client.log
-
-# JavaDoc
-/docs/javadoc/*
-
-# Example Code
-/src/main/java/me/philippheuer/twitch4j/example/*
+gradle.properties
 
 # Modules
 /modules/
+
+# Visual Studio Code
+.vscode/
+
+# Documentation
+docs/
+
+# Pipeline
+.dist/*
+.tmp/*

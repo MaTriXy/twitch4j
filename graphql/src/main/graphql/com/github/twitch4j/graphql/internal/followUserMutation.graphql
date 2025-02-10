@@ -1,0 +1,9 @@
+mutation follow($followUserInput: FollowUserInput!) {
+	followUser(input: $followUserInput) {
+		follow {
+			user {
+				id
+			}
+		}
+	}
+}
